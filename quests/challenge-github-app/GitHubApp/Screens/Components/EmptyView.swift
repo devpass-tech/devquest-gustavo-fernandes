@@ -21,7 +21,18 @@ final class EmptyView: UIView {
         label.textAlignment = .center
         return label
     }()
+    
+    private var subtitleEmptyMessageLabel: UILabel = {
 
+        let label = UILabel()
+        label.text = "Search for users to see their public repositories here!"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
     
     init() {
         
@@ -41,6 +52,7 @@ final class EmptyView: UIView {
         self.backgroundColor = .white
         
         self.addSubview(self.emptyMessageLabel)
+        self.addSubview(self.subtitleEmptyMessageLabel)
     }
     
     private func configureConstraints() {
@@ -50,6 +62,10 @@ final class EmptyView: UIView {
             self.emptyMessageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.emptyMessageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             self.emptyMessageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+
+            self.subtitleEmptyMessageLabel.topAnchor.constraint(equalTo: self.emptyMessageLabel.bottomAnchor , constant: 8),
+            self.subtitleEmptyMessageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            self.subtitleEmptyMessageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
         ])
         
     }
