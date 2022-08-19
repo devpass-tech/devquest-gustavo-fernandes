@@ -14,6 +14,12 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private let searchBar: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchBar.placeholder = "Type a GitHub user name"
+        return search
+    }()
 
     private let service = Service()
 
@@ -30,6 +36,7 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.searchController = searchBar
     }
 
     override func viewDidAppear(_ animated: Bool) {

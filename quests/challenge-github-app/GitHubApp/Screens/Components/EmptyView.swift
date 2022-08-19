@@ -37,10 +37,8 @@ final class EmptyView: UIView {
     init() {
         
         super.init(frame: .zero)
-
         self.configureSubviews()
         self.configureConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
