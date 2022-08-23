@@ -12,7 +12,6 @@ final class LoadingView: UIView {
         
         let label = UILabel()
         label.text = "Searching repositories…"
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.darkGray
         label.font = UIFont.systemFont(ofSize: 17)
         label.numberOfLines = 2
