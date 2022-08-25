@@ -69,6 +69,6 @@ extension RepositoryCellView: ViewConfiguration {
     }
     
     func setupAdditionalConfiguration() {
-        
+        self.accessoryType = .disclosureIndicator
     }
 }
