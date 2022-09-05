@@ -35,7 +35,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchBar
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController?.searchBar.delegate = self

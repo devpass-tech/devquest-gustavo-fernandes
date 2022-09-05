@@ -5,7 +5,6 @@
 //  Created by Rodrigo Borges on 01/08/22.
 //
 
-import Foundation
 import UIKit
 
 final class EmptyView: UIView {
@@ -65,7 +64,5 @@ final class EmptyView: UIView {
             self.subtitleEmptyMessageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             self.subtitleEmptyMessageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
         ])
-        
     }
-    
 }
