@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Repository {
+struct Repository: Decodable {
     let name: String
+    let owner: Owner
+}
+
+struct Owner: Decodable {
+    let login: String
     
 }

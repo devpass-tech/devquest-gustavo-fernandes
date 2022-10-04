@@ -43,15 +43,16 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
-        service.fetchList { repositories in
-
-            DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
+        
+        service.fetchList(user: "GustavoFernandesBatista") { result in
+            switch result {
+            case .success(let repository):
+                print(repository.count)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-
     }
 
     override func loadView() {
