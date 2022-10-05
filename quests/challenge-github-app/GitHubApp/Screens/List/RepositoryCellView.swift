@@ -51,10 +51,10 @@ class RepositoryCellView: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configure(with repositorys: Repository) {
+    func configure(with repository: Repository) {
         
-        labelName.text = repositorys.name
-        labelUser.text = repositorys.owner.login
+        labelName.text = repository.name
+        labelUser.text = repository.owner.login
     }
 }
 

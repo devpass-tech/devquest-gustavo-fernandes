@@ -9,7 +9,7 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
-    private var repositorys: [Repository] = []
+    private var repositories: [Repository] = []
     
     private let listView: ListView = {
         
@@ -71,7 +71,7 @@ extension ListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
         guard let text = searchBar.text else { return }
-        self.listView.updateView(with: repositorys)
+        self.listView.updateView(with: repositories)
         self.fetchRepos(user: text)
         searchBar.text = ""
     }

@@ -16,14 +16,14 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
     
-    private var repositorys: [Repository] = []
+    private var repositories: [Repository] = []
     
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
-        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: "repositoryCellView")
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.identifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -84,7 +84,7 @@ extension ListView {
     
     func updateView(with repositories: [Repository]) {
         
-        self.repositorys = repositories
+        self.repositories = repositories
         self.tableView.reloadData()
         self.tableView.isHidden = false
         self.emptyView.isHidden = true
@@ -95,16 +95,16 @@ extension ListView: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.repositorys.count
+        return self.repositories.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "repositoryCellView", for: indexPath) as? RepositoryCellView else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier, for: indexPath) as? RepositoryCellView else {
             return UITableViewCell()
         }
         
-        let repository = repositorys[indexPath.row]
+        let repository = repositories[indexPath.row]
         cell.configure(with: repository)
         
         return cell
