@@ -9,12 +9,11 @@ import UIKit
 
 class RepositoryCellView: UITableViewCell {
     
-    static let identifier = "RepositoryCellView"
+    static let identifier = "repositoryCellView"
     
     private var labelName: UILabel = {
         let label = UILabel()
         label.text = "nome do repositorio"
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -25,7 +24,6 @@ class RepositoryCellView: UITableViewCell {
     private var  labelUser: UILabel = {
         let label = UILabel()
         label.text = "nome do usuario"
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 15)
         label.numberOfLines = 0
@@ -51,6 +49,12 @@ class RepositoryCellView: UITableViewCell {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func configure(with repositorys: Repository) {
+        
+        labelName.text = repositorys.name
+        labelUser.text = repositorys.owner.login
     }
 }
 
