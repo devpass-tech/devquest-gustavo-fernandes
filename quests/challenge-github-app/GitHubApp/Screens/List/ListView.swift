@@ -15,20 +15,21 @@ struct ListViewConfiguration {
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
-
-    private var listItems: [String] = []
-
+    
+    private var repositories: [Repository] = []
+    
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.backgroundColor = .white
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.identifier)
         tableView.dataSource = self
         return tableView
     }()
-
-    private var emptyView: EmptyView = {
-
+    
+    var emptyView: EmptyView = {
+        
         let emptyView = EmptyView()
         emptyView.translatesAutoresizingMaskIntoConstraints = false
         return emptyView
@@ -80,25 +81,32 @@ private extension ListView {
 }
 
 extension ListView {
-
-    func updateView(with repositories: [String]) {
-
-        self.listItems = repositories
+    
+    func updateView(with repositories: [Repository]) {
+        
+        self.repositories = repositories
         self.tableView.reloadData()
+        self.tableView.isHidden = false
+        self.emptyView.isHidden = true
     }
 }
 
 extension ListView: UITableViewDataSource {
-
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.listItems.count
+        
+        return self.repositories.count
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier, for: indexPath) as? RepositoryCellView else {
+            return UITableViewCell()
+        }
+        
+        let repository = repositories[indexPath.row]
+        cell.configure(with: repository)
+        
         return cell
     }
 }

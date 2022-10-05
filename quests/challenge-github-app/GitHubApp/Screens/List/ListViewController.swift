@@ -9,8 +9,10 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
+    private var repositories: [Repository] = []
+    
     private let listView: ListView = {
-
+        
         let listView = ListView()
         return listView
     }()
@@ -33,22 +35,25 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
+    
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchBar
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-        self.navigationItem.searchController?.searchBar.delegate = self
-       
+        searchBar.searchBar.delegate = self
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         
-        service.fetchList(user: "GustavoFernandesBatista") { result in
+    }
+    
+    private func fetchRepos(user: String){
+        self.service.fetchList(user) { result in
             switch result {
             case .success(let repository):
-                print(repository.count)
-                
+                DispatchQueue.main.async {
+                    self.listView.updateView(with: repository)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -61,4 +66,12 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+        guard let text = searchBar.text else { return }
+        self.listView.updateView(with: repositories)
+        self.fetchRepos(user: text)
+        searchBar.text = ""
+    }
 }

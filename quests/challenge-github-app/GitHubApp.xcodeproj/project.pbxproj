@@ -214,6 +214,7 @@
 			children = (
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
+				9152209B28B03BEA00C9850B /* RepositoryCellView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -232,7 +233,6 @@
 			children = (
 				D16FF2E0289856CA00F08BD2 /* EmptyView.swift */,
 				9152209928B020C000C9850B /* LoadingView.swift */,
-				9152209B28B03BEA00C9850B /* RepositoryCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

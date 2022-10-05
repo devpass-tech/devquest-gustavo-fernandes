@@ -42,7 +42,7 @@ struct Service {
         self.urlSession = urlSession
     }
     
-    func fetchList(user: String, onComplete: @escaping (Result<[Repository], ServiceError>) -> Void) {
+    func fetchList(_ user: String, _ onComplete: @escaping (Result<[Repository], ServiceError>) -> Void) {
         
         guard let url = URL(string: "https://api.github.com/users/\(user)/repos") else {
             return onComplete(.failure(.badUrl))
