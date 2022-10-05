@@ -35,13 +35,12 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
+    
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchBar
         searchBar.searchBar.delegate = self
 
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
