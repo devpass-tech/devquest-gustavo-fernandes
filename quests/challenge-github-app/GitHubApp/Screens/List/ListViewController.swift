@@ -48,18 +48,20 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchRepos(user: String){
+        self.listView.showLoading()
         self.service.fetchList(user) { result in
             switch result {
             case .success(let repository):
                 DispatchQueue.main.async {
                     self.listView.updateView(with: repository)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure(_):
+                DispatchQueue.main.async{
+                self.listView.hideLoading()
+                }
             }
         }
     }
-
     override func loadView() {
         self.view = listView
     }
