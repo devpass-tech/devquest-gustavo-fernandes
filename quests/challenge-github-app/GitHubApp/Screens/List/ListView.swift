@@ -34,6 +34,13 @@ final class ListView: UIView {
         emptyView.translatesAutoresizingMaskIntoConstraints = false
         return emptyView
     }()
+    
+    var loadingView: LoadingView = {
+       let loadingView = LoadingView()
+       loadingView.translatesAutoresizingMaskIntoConstraints = false
+       loadingView.isHidden = true
+       return loadingView
+   }()
 
     init() {
 
@@ -61,6 +68,7 @@ private extension ListView {
 
         addSubview(self.tableView)
         addSubview(self.emptyView)
+        addSubview(self.loadingView)
     }
 
     func configureSubviewsConstraints() {
@@ -75,7 +83,12 @@ private extension ListView {
             self.emptyView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.emptyView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.emptyView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.emptyView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.emptyView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.loadingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.loadingView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
@@ -87,6 +100,7 @@ extension ListView {
         self.repositories = repositories
         self.tableView.reloadData()
         self.tableView.isHidden = false
+        self.loadingView.isHidden = true
         self.emptyView.isHidden = true
     }
 }
