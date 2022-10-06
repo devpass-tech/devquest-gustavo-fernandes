@@ -10,6 +10,7 @@
 		91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91296BD828B7FF39000C274B /* ViewConfiguration.swift */; };
 		9152209A28B020C000C9850B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209928B020C000C9850B /* LoadingView.swift */; };
 		9152209C28B03BEA00C9850B /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209B28B03BEA00C9850B /* RepositoryCellView.swift */; };
+		915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		91296BD828B7FF39000C274B /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		9152209928B020C000C9850B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9152209B28B03BEA00C9850B /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				91296BD828B7FF39000C274B /* ViewConfiguration.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */,
+			);
+			path = RepositoryInfoView;
 			sourceTree = "<group>";
 		};
 		9826D8A82788B40600E05400 = {
@@ -183,6 +193,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */,
 				D16FF2DF289856AC00F08BD2 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -374,6 +385,7 @@
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */,
 				9152209A28B020C000C9850B /* LoadingView.swift in Sources */,
+				915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
