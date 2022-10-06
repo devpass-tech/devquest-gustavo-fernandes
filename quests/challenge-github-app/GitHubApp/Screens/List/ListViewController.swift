@@ -58,6 +58,7 @@ final class ListViewController: UIViewController {
             case .failure(_):
                 DispatchQueue.main.async{
                 self.listView.hideLoading()
+                self.listView.showEmpty()
                 }
             }
         }
