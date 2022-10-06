@@ -35,7 +35,7 @@ final class ListView: UIView {
         return emptyView
     }()
     
-    var loadingView: LoadingView = {
+   private var loadingView: LoadingView = {
        let loadingView = LoadingView()
        loadingView.translatesAutoresizingMaskIntoConstraints = false
        loadingView.isHidden = true
@@ -102,6 +102,14 @@ extension ListView {
         self.tableView.isHidden = false
         self.loadingView.isHidden = true
         self.emptyView.isHidden = true
+    }
+    
+    func showLoading() {
+    self.loadingView.isHidden = false
+    }
+
+    func hideLoading() {
+    self.loadingView.isHidden = true
     }
 }
 
