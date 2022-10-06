@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListViewDelegate: AnyObject {
+    func selectRepository()
+}
+
 struct ListViewConfiguration {
     
     let listItems: [String]
@@ -18,13 +22,15 @@ final class ListView: UIView {
     
     private var repositories: [Repository] = []
     
+    weak var delegate: ListViewDelegate?
+    
     private lazy var tableView: UITableView = {
-        
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -140,5 +146,12 @@ extension ListView: UITableViewDataSource {
         cell.configure(with: repository)
         
         return cell
+    }
+}
+extension ListView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        delegate?.selectRepository()
     }
 }
