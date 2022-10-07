@@ -45,18 +45,18 @@ class LicenseView: UIView {
         return licenseCode
     }()
     
-    private lazy var buttonProfile: UIButton = {
-        let buttonProfile = UIButton(frame: .zero)
-        buttonProfile.backgroundColor = .blue
-        buttonProfile.setTitle("button", for: .normal)
-        buttonProfile.layer.cornerRadius = 8
+    private lazy var buttonLicense: UIButton = {
+        let buttonLicense = UIButton(frame: .zero)
+        buttonLicense.backgroundColor = .blue
+        buttonLicense.setTitle("See License", for: .normal)
+        buttonLicense.layer.cornerRadius = 8
         
-        return buttonProfile
+        return buttonLicense
     }()
     
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, licenseName, licenseCode, buttonProfile])
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, licenseName, licenseCode, buttonLicense])
         stackView.distribution = .fillProportionally
         stackView.spacing = 5
         stackView.axis = .vertical
@@ -84,13 +84,13 @@ extension LicenseView: ViewConfiguration {
         NSLayoutConstraint.activate([
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ])
     }
     
     func setupAdditionalConfiguration() {
-        self.backgroundColor = .orange
+        self.backgroundColor = .gray
     }
     
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91296BD828B7FF39000C274B /* ViewConfiguration.swift */; };
 		9143941C28F097430028497A /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9143941B28F097430028497A /* LicenseView.swift */; };
+		9143942228F09DD90028497A /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9143942128F09DD90028497A /* OwnerView.swift */; };
 		9152209A28B020C000C9850B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209928B020C000C9850B /* LoadingView.swift */; };
 		9152209C28B03BEA00C9850B /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209B28B03BEA00C9850B /* RepositoryCellView.swift */; };
 		915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		91296BD828B7FF39000C274B /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		9143941B28F097430028497A /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		9143942128F09DD90028497A /* OwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		9152209928B020C000C9850B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9152209B28B03BEA00C9850B /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				9143941B28F097430028497A /* LicenseView.swift */,
 			);
 			path = LicenseView;
+			sourceTree = "<group>";
+		};
+		9143942028F09DC80028497A /* OwnerView */ = {
+			isa = PBXGroup;
+			children = (
+				9143942128F09DD90028497A /* OwnerView.swift */,
+			);
+			path = OwnerView;
 			sourceTree = "<group>";
 		};
 		915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */ = {
@@ -203,6 +213,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9143942028F09DC80028497A /* OwnerView */,
 				9143941A28F097190028497A /* LicenseView */,
 				915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */,
 				D16FF2DF289856AC00F08BD2 /* Components */,
@@ -394,6 +405,7 @@
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
+				9143942228F09DD90028497A /* OwnerView.swift in Sources */,
 				91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */,
 				9152209A28B020C000C9850B /* LoadingView.swift in Sources */,
 				915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */,

@@ -76,7 +76,7 @@ extension RepositoryInfoView: ViewConfiguration{
     }
     
     func setupAdditionalConfiguration() {
-        self.backgroundColor = .cyan
+        self.backgroundColor = .gray
     }
     
     
