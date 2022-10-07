@@ -16,6 +16,13 @@ class DetailView: UIView {
         return repositoryInfoView
     }()
     
+    private lazy var licenseView: LicenseView = {
+        let licenseView = LicenseView()
+        licenseView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return licenseView
+    }()
+    
     init() {
         super.init(frame: .zero)
         setupView()
@@ -31,15 +38,21 @@ extension DetailView: ViewConfiguration {
     
     func buildViewHierarchy() {
         addSubview(repositoryInfoView)
+        addSubview(licenseView)
     }
     
     func setupContraints() {
         
         NSLayoutConstraint.activate([
-        repositoryInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-        repositoryInfoView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-        repositoryInfoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
-        repositoryInfoView.heightAnchor.constraint(equalToConstant: 200)
+        repositoryInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+        repositoryInfoView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        repositoryInfoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+        repositoryInfoView.heightAnchor.constraint(equalToConstant: 200),
+        
+        licenseView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+        licenseView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        licenseView.topAnchor.constraint(equalTo: repositoryInfoView.bottomAnchor, constant: 1),
+        licenseView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     
