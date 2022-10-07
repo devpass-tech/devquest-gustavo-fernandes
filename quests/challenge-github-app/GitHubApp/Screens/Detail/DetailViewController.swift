@@ -11,5 +11,6 @@ class DetailViewController: UIViewController {
 
     override func loadView() {
         self.view = DetailView()
+        view.backgroundColor = .white
     }
 }

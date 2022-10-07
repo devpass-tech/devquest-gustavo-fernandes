@@ -40,6 +40,7 @@ final class ListViewController: UIViewController {
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchBar
         searchBar.searchBar.delegate = self
+        listView.delegate = self
 
     }
 
@@ -58,6 +59,7 @@ final class ListViewController: UIViewController {
             case .failure(_):
                 DispatchQueue.main.async{
                 self.listView.hideLoading()
+                self.listView.showEmpty()
                 }
             }
         }
@@ -75,5 +77,11 @@ extension ListViewController: UISearchBarDelegate {
         self.listView.updateView(with: repositories)
         self.fetchRepos(user: text)
         searchBar.text = ""
+    }
+}
+extension ListViewController: ListViewDelegate {
+    func selectRepository() {
+        let detailViewController = DetailViewController()
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
