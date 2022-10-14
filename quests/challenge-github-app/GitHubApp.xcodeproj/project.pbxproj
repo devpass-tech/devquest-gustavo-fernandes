@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91296BD828B7FF39000C274B /* ViewConfiguration.swift */; };
+		9143941C28F097430028497A /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9143941B28F097430028497A /* LicenseView.swift */; };
+		9143942228F09DD90028497A /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9143942128F09DD90028497A /* OwnerView.swift */; };
 		9152209A28B020C000C9850B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209928B020C000C9850B /* LoadingView.swift */; };
 		9152209C28B03BEA00C9850B /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152209B28B03BEA00C9850B /* RepositoryCellView.swift */; };
+		915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -47,8 +50,11 @@
 
 /* Begin PBXFileReference section */
 		91296BD828B7FF39000C274B /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		9143941B28F097430028497A /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		9143942128F09DD90028497A /* OwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		9152209928B020C000C9850B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9152209B28B03BEA00C9850B /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +108,30 @@
 				91296BD828B7FF39000C274B /* ViewConfiguration.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9143941A28F097190028497A /* LicenseView */ = {
+			isa = PBXGroup;
+			children = (
+				9143941B28F097430028497A /* LicenseView.swift */,
+			);
+			path = LicenseView;
+			sourceTree = "<group>";
+		};
+		9143942028F09DC80028497A /* OwnerView */ = {
+			isa = PBXGroup;
+			children = (
+				9143942128F09DD90028497A /* OwnerView.swift */,
+			);
+			path = OwnerView;
+			sourceTree = "<group>";
+		};
+		915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				915CC18828EF8CE900F7D2C1 /* RepositoryInfoView.swift */,
+			);
+			path = RepositoryInfoView;
 			sourceTree = "<group>";
 		};
 		9826D8A82788B40600E05400 = {
@@ -183,6 +213,9 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9143942028F09DC80028497A /* OwnerView */,
+				9143941A28F097190028497A /* LicenseView */,
+				915CC18728EF8CCA00F7D2C1 /* RepositoryInfoView */,
 				D16FF2DF289856AC00F08BD2 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -372,10 +405,13 @@
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
+				9143942228F09DD90028497A /* OwnerView.swift in Sources */,
 				91296BD928B7FF39000C274B /* ViewConfiguration.swift in Sources */,
 				9152209A28B020C000C9850B /* LoadingView.swift in Sources */,
+				915CC18928EF8CE900F7D2C1 /* RepositoryInfoView.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
+				9143941C28F097430028497A /* LicenseView.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
