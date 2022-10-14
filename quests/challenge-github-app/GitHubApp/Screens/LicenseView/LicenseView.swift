@@ -47,7 +47,7 @@ class LicenseView: UIView {
     
     private lazy var buttonLicense: UIButton = {
         let buttonLicense = UIButton(frame: .zero)
-        buttonLicense.backgroundColor = .blue
+        buttonLicense.backgroundColor = .systemBlue
         buttonLicense.setTitle("See License", for: .normal)
         buttonLicense.layer.cornerRadius = 8
         
@@ -90,7 +90,7 @@ extension LicenseView: ViewConfiguration {
     }
     
     func setupAdditionalConfiguration() {
-        self.backgroundColor = .gray
+        self.backgroundColor = .white
     }
     
     

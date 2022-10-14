@@ -16,7 +16,7 @@ class DetailView: UIView {
         return repositoryInfoView
     }()
     
-    private lazy var ownewView: OwnerView = {
+    private lazy var ownerView: OwnerView = {
        let ownerView = OwnerView()
         ownerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -28,6 +28,15 @@ class DetailView: UIView {
         licenseView.translatesAutoresizingMaskIntoConstraints = false
         
         return licenseView
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [repositoryInfoView, ownerView, licenseView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 5
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        return stackView
     }()
     
     init() {
@@ -44,28 +53,21 @@ class DetailView: UIView {
 extension DetailView: ViewConfiguration {
     
     func buildViewHierarchy() {
-        addSubview(repositoryInfoView)
-        addSubview(ownewView)
-        addSubview(licenseView)
+        addSubview(stackView)
     }
     
     func setupContraints() {
         
         NSLayoutConstraint.activate([
-        repositoryInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        repositoryInfoView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        repositoryInfoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-        repositoryInfoView.heightAnchor.constraint(equalToConstant: 200),
-        
-        ownewView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        ownewView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        ownewView.topAnchor.constraint(equalTo: repositoryInfoView.bottomAnchor, constant: 1),
-        ownewView.heightAnchor.constraint(equalToConstant: 200),
-        
-        licenseView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        licenseView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        licenseView.topAnchor.constraint(equalTo: ownewView.bottomAnchor, constant: 1),
-        licenseView.heightAnchor.constraint(equalToConstant: 200)
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            repositoryInfoView.heightAnchor.constraint(equalToConstant: 150),
+            ownerView.heightAnchor.constraint(equalToConstant: 150),
+            licenseView.heightAnchor.constraint(equalToConstant: 150)
+            
         ])
     }
     

@@ -43,21 +43,26 @@ class OwnerView: UIView {
         return descriptionLabel
     }()
     
-    private lazy var imagePerfil: UIImageView = {
-        let imagePerfil = UIImageView(frame: .zero)
-        imagePerfil.contentMode = .scaleAspectFill
-        imagePerfil.backgroundColor = .orange
-        
-        return imagePerfil
-    }()
-    
     private lazy var buttonProfile: UIButton = {
         let buttonProfile = UIButton(frame: .zero)
-        buttonProfile.backgroundColor = .blue
+        buttonProfile.backgroundColor = .systemBlue
         buttonProfile.setTitle("See Profile", for: .normal)
         buttonProfile.layer.cornerRadius = 8
         
         return buttonProfile
+    }()
+    
+    private lazy var imagePerfil: UIImageView = {
+        let imagePerfil = UIImageView(frame: .zero)
+        imagePerfil.contentMode = .scaleAspectFill
+        imagePerfil.backgroundColor = .black
+        imagePerfil.image = UIImage(named: "gustavo")
+        imagePerfil.translatesAutoresizingMaskIntoConstraints = false
+        imagePerfil.layer.cornerRadius = imagePerfil.frame.size.width / 2
+        imagePerfil.clipsToBounds = true
+        
+        
+        return imagePerfil
     }()
     
     private lazy var stackView: UIStackView = {
@@ -81,8 +86,9 @@ class OwnerView: UIView {
 extension OwnerView: ViewConfiguration {
     
     func buildViewHierarchy() {
-        addSubview(stackView)
         addSubview(imagePerfil)
+        addSubview(stackView)
+        
     }
     
     func setupContraints() {
@@ -92,13 +98,18 @@ extension OwnerView: ViewConfiguration {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+
+            imagePerfil.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            imagePerfil.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 300),
+            imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            imagePerfil.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -90),
             
 
         ])
     }
     
     func setupAdditionalConfiguration() {
-        backgroundColor = .gray
+        backgroundColor = .white
     }
     
     
